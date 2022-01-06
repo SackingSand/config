@@ -1,8 +1,8 @@
-const {sequelizeModel}=require("./Sequelize");
+const {sequelize}=require("./Sequelize");
 
 (async()=>{
     try {
-        await sequelizeModel.authenticate();
+        await sequelize.authenticate();
         console.log('Terhubung ke Database');
         
     } catch (error) {
