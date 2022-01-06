@@ -3,7 +3,7 @@ const {sequelize}=require("../config/Sequelize");
 const {
   Model,DataTypes
 } = require('sequelize');
-class user extends Model {
+class bio_doctor extends Model {
   /**
    * Helper method for defining associations.
    * This method is not a part of Sequelize lifecycle.
@@ -13,32 +13,22 @@ class user extends Model {
     // define association here
   }
 };
-
-user.init({
-  ref_code: {
-    type:DataTypes.STRING
-  },
+bio_doctor.init({
   fullname: {
-    type:DataTypes.STRING
-  },
-  birthday: {
-    type:DataTypes.DATE
-  },
-  nik: {
-    type:DataTypes.STRING
-  },
-  religion: {
     type:DataTypes.STRING
   },
   address: {
     type:DataTypes.STRING
   },
-  occupation: {
+  phone_number: {
+    type:DataTypes.STRING
+  },
+  avatar: {
     type:DataTypes.STRING
   }
 }, {
   sequelize,
-  modelName: 'user',
+  modelName: 'bio_doctor',
 });
 
-module.exports=user;
+module.exports=bio_doctor;

@@ -3,7 +3,8 @@ const {sequelize}=require("../config/Sequelize");
 const {
   Model,DataTypes
 } = require('sequelize');
-class user extends Model {
+
+class history_reedem extends Model {
   /**
    * Helper method for defining associations.
    * This method is not a part of Sequelize lifecycle.
@@ -14,31 +15,31 @@ class user extends Model {
   }
 };
 
-user.init({
-  ref_code: {
+history_reedem.init({
+  status_product: {
     type:DataTypes.STRING
   },
   fullname: {
     type:DataTypes.STRING
   },
-  birthday: {
-    type:DataTypes.DATE
-  },
-  nik: {
-    type:DataTypes.STRING
-  },
-  religion: {
+  phone_number: {
     type:DataTypes.STRING
   },
   address: {
     type:DataTypes.STRING
   },
-  occupation: {
+  region: {
+    type:DataTypes.STRING
+  },
+  city: {
+    type:DataTypes.STRING
+  },
+  postal_code: {
     type:DataTypes.STRING
   }
 }, {
   sequelize,
-  modelName: 'user',
+  modelName: 'history_reedem',
 });
 
-module.exports=user;
+module.exports=history_reedem;

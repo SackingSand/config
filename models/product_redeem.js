@@ -1,9 +1,10 @@
 'use strict';
 const {sequelize}=require("../config/Sequelize");
 const {
-  Model,DataTypes
+  Model, DataTypes
 } = require('sequelize');
-class user extends Model {
+
+class product_redeem extends Model {
   /**
    * Helper method for defining associations.
    * This method is not a part of Sequelize lifecycle.
@@ -14,31 +15,25 @@ class user extends Model {
   }
 };
 
-user.init({
-  ref_code: {
+product_redeem.init({
+  name_product: {
     type:DataTypes.STRING
   },
-  fullname: {
-    type:DataTypes.STRING
+  reedem_point: {
+    type:DataTypes.NUMBER
   },
-  birthday: {
+  valid_date: {
     type:DataTypes.DATE
   },
-  nik: {
+  img_product: {
     type:DataTypes.STRING
   },
-  religion: {
-    type:DataTypes.STRING
-  },
-  address: {
-    type:DataTypes.STRING
-  },
-  occupation: {
+  description: {
     type:DataTypes.STRING
   }
 }, {
   sequelize,
-  modelName: 'user',
+  modelName: 'product_redeem',
 });
 
-module.exports=user;
+module.exports=product_redeem;

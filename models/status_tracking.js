@@ -1,9 +1,9 @@
 'use strict';
 const {sequelize}=require("../config/Sequelize");
 const {
-  Model,DataTypes
+  Model, DataTypes
 } = require('sequelize');
-class user extends Model {
+class status_tracking extends Model {
   /**
    * Helper method for defining associations.
    * This method is not a part of Sequelize lifecycle.
@@ -14,31 +14,16 @@ class user extends Model {
   }
 };
 
-user.init({
-  ref_code: {
+status_tracking.init({
+  post_description: {
     type:DataTypes.STRING
   },
-  fullname: {
-    type:DataTypes.STRING
-  },
-  birthday: {
-    type:DataTypes.DATE
-  },
-  nik: {
-    type:DataTypes.STRING
-  },
-  religion: {
-    type:DataTypes.STRING
-  },
-  address: {
-    type:DataTypes.STRING
-  },
-  occupation: {
-    type:DataTypes.STRING
+  status_post: {
+    type:DataTypes.BOOLEAN
   }
 }, {
   sequelize,
-  modelName: 'user',
+  modelName: 'status_tracking',
 });
 
-module.exports=user;
+module.exports=status_tracking;
